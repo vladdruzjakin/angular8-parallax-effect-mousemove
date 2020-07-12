@@ -1,9 +1,42 @@
-  <section class="block">
-    <div class="parallax-container">
-      <span parallaxItem [top]="'10%'" [left]="'5%'"><span class="paralax-cube tiny"></span></span>
-      <span parallaxItem [top]="'75%'" [left]="'4%'" [rotate]="'10'"><span class="paralax-cube middle"></span></span>
-      <span parallaxItem [top]="'16%'" [left]="'24%'" [rotate]="'35'"><span class="paralax-cube small"></span></span>
-      <span parallaxItem [top]="'-15px'" [left]="'64%'" [rotate]="'45'"><span class="paralax-cube middle"></span></span>
-      <span parallaxItem [top]="'25%'" [left]="'84%'" [rotate]="'65'"><span class="paralax-cube middle"></span></span>
-    </div>
-  </section>
+<section class="block">
+  <p class="text">move mouse</p>
+	<div class="parallax-container">
+		<ng-container *ngFor="let item of parallax_item">
+			<ng-container [ngSwitch]="item.size">
+				<ng-template ngSwitchCase="tiny">
+					<span
+          parallaxItem
+          [top]="item.top"
+          [left]="item.left"
+          [rotate]="item.rotate"
+          ><span class="paralax-cube tiny"></span></span>
+				</ng-template>
+				<ng-template ngSwitchCase="small">
+					<span
+          parallaxItem
+          [top]="item.top"
+          [left]="item.left"
+          [rotate]="item.rotate"
+          ><span class="paralax-cube small"></span></span>
+				</ng-template>
+				<ng-template ngSwitchCase="middle">
+					<span
+          parallaxItem
+          [top]="item.top"
+          [left]="item.left"
+          [rotate]="item.rotate"
+          ><span class="paralax-cube middle"></span></span>
+				</ng-template>
+				<ng-template ngSwitchCase="big">
+					<span
+          parallaxItem
+          [top]="item.top"
+          [left]="item.left"
+          [rotate]="item.rotate"
+          ><span class="paralax-cube big"></span></span>
+				</ng-template>
+				<ng-template ngSwitchDefault>loading</ng-template>
+			</ng-container>
+		</ng-container>
+	</div>
+</section>
