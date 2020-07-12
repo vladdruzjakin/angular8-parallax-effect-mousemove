@@ -1,0 +1,37 @@
+.parallax-container {
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+}
+
+.paralax-cube {
+    display: block;
+    background: #22ADF9;
+    opacity: 0.97;
+    box-shadow: 0px 0px 30px #22adf966;
+    border-radius: 2px;
+    z-index: 1;
+
+    transition: all 0.3s ease;
+
+    &.big-blure {
+        width: 100px;
+        height: 100px;
+        box-shadow: 0px 0px 30px rgba(34, 173, 249, 0.4);
+        filter: blur(27px);
+    }
+    &.middle {
+        width: 35px;
+        height: 35px;
+    }
+
+    &.small {
+        width: 20px;
+        height: 20px;
+    }
+
+    &.tiny {
+        width: 10px;
+        height: 10px;
+    }
+}
