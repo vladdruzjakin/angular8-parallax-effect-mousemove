@@ -13,7 +13,7 @@
     z-index: 1;
 
     transition: all 0.3s ease;
-
+     animation: box 8s ease infinite;
     &.big {
         width: 120px;
         height: 120px;
@@ -32,4 +32,12 @@
         width: 20px;
         height: 20px;
     }
+}
+
+@keyframes box {
+  20% { background: red; box-shadow: 0px 0px 30px red; }
+  40% { background: green; box-shadow: 0px 0px 30px green; }
+  60% { background: blue; box-shadow: 0px 0px 30px blue;  }
+  80% { background: pink; box-shadow: 0px 0px 30px pink; }
+  100% { background: white; box-shadow: 0px 0px 30px white;}
 }
