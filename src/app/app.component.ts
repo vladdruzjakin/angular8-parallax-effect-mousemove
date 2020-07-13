@@ -33,7 +33,7 @@ export class AppComponent {
         opacity: "1"
       },
       {
-        top: "55%",
+        top: "65%",
         left: "32%",
         size: "big",
         rotate: "40",

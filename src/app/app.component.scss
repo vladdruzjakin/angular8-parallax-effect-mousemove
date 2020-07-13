@@ -4,6 +4,8 @@
   min-width: 100%;
   min-height: 850px;
   overflow: hidden;
+
+  background-color: black;
   .text {
     position: absolute;
     top: 50%;
@@ -12,5 +14,15 @@
     font-size: 40px;
     text-transform: uppercase;
     z-index: 9;
+    color: white;
+    animation: textRGB 8s ease infinite;
   }
+}
+
+@keyframes textRGB {
+  20% { color: red; }
+  40% { color: green;  }
+  60% { color: blue;  }
+  80% { color: pink;  }
+  100% { color: white; }
 }
