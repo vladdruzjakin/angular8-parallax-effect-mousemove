@@ -8,6 +8,10 @@ export class ParallaxItemDirective implements OnInit {
   @Input() left;
   @Input() rotate = 30;
   @Input() opacity = 1;
+  @Input() inversion = false;
+  @Input() movement = 0.025;
+  public newX;
+  public newY;
   constructor(private eleRef: ElementRef) {}
 
   ngOnInit(): void {
@@ -20,14 +24,19 @@ export class ParallaxItemDirective implements OnInit {
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e) {
+    this.movement = this.movement ? this.movement : 0.025;
 
     const cursorX = e.pageX;
     const cursorY = e.pageY;
-    const movementConstant = 0.025;
 
-    const newX = cursorX * movementConstant;
-    const newY = cursorY * movementConstant;
+    if (!this.inversion) {
+      this.newX = cursorX * this.movement;
+      this.newY = cursorY * this.movement;
+    } else {
+      this.newX = -(cursorX * this.movement);
+      this.newY = -(cursorY * this.movement);
+    }
 
-    this.eleRef.nativeElement.style.transform = `translate(${ newX }px, ${ newY }px) rotate(${ this.rotate }deg)`;
+    this.eleRef.nativeElement.style.transform = `translate(${ this.newX }px, ${ this.newY }px) rotate(${ this.rotate }deg)`;
   }
 }

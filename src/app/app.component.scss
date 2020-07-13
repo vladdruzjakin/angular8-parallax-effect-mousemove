@@ -3,6 +3,7 @@
 
   min-width: 100%;
   min-height: 850px;
+  overflow: hidden;
   .text {
     position: absolute;
     top: 50%;
@@ -10,5 +11,6 @@
     transform: translate(-50%, -50%);
     font-size: 40px;
     text-transform: uppercase;
+    z-index: 9;
   }
 }
